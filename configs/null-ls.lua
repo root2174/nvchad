@@ -11,16 +11,9 @@ local b = null_ls.builtins
 local sources = {
 
   -- webdev stuff
-  b.formatting.deno_fmt, -- choosed deno for ts/js files cuz its very fast!
   b.formatting.prettier.with { filetypes = { "html", "markdown", "css", "javascript", "typescript", "javascriptreact", "typescriptreact", "vue" } }, -- so prettier works only on these filetypes
   b.diagnostics.eslint_d.with { filetypes = {"javascript", "typescript", "javascriptreact",  "typescriptreact", "vue" }},
-  -- Lua
-  b.formatting.stylua,
-
-  -- cpp
-  b.formatting.clang_format,
 }
-
 
 local async_formatting = function(bufnr)
     bufnr = bufnr or vim.api.nvim_get_current_buf()
